@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="Diseño/estilos.css">
+<meta charset="utf-8" />
+<title>'Calculadora'</title>
+						<table><tr>
+
+</head>
+<body style="width:100%; text-align:center;">
+	<header><h1>CALCULADORA BASICA</h1></header>
+	<section>
+		<form>
+			<table style="border:3px solid #000; margin: 0 auto;">
+				<tr style="text-align:center;">
+					<td colspan="4">
+						<input id="resultado" type="text" value="0" size="20" style="border: 3px solid blue; padding: 10px; border-radius: 10px;" /><input id="memoria" type="hidden" value="0" />
+
+
+						
+					</td>
+				</tr>
+				<tr style="text-align:center;">
+					<td>
+						<input type="button" value="7" onClick ="var str1=document.getElementById('resultado').value; if(str1 == '0'){document.getElementById('resultado').value=7} else{ var str2='7'; var res = str1.concat(str2); document.getElementById('resultado').value=res;}"style="width:55px;">
+					</td>
+					<td>
+						<input type="button" value="8"  onClick ="var str1=document.getElementById('resultado').value; if(str1 == '0'){document.getElementById('resultado').value=8} else{ var str2='8'; var res = str1.concat(str2); document.getElementById('resultado').value=res;}"style="width:55px;">
+					</td>
+					<td>
+						<input type="button" value="9" onClick ="var str1=document.getElementById('resultado').value; if(str1 == '0'){document.getElementById('resultado').value=9} else{ var str2='9'; var res = str1.concat(str2); document.getElementById('resultado').value=res;}"style="width:55px;">
+					</td>
+					<td>
+						<input type="button" value="/" OnClick="operaciones('dividir'); return false;" style="width:55px;">
+					</td>
+
+					</tr>
+					
+					<tr style="text-align:center;">
+						<td>
+						<input type="button" value="6" onClick ="var str1=document.getElementById('resultado').value; if(str1 == '0'){document.getElementById('resultado').value=6} else{ var str2='6'; var res = str1.concat(str2); document.getElementById('resultado').value=res;}"style="width:55px;">
+					</td>
+					<td>
+						<input type="button" value="5" onClick ="var str1=document.getElementById('resultado').value; if(str1 == '0'){document.getElementById('resultado').value=5} else{ var str2='5'; var res = str1.concat(str2); document.getElementById('resultado').value=res;}"style="width:55px;">
+					</td>
+					<td>
+						<input type="button" value="4" onClick ="var str1=document.getElementById('resultado').value; if(str1 == '0'){document.getElementById('resultado').value=4} else{ var str2='4'; var res = str1.concat(str2); document.getElementById('resultado').value=res;}"style="width:55px;">
+					</td>
+					<td>
+						<input type="button" value="*" OnClick="operaciones('multiplicar'); return false;" style="width:55px;">
+					</td>
+
+					<tr style="text-align:center;">
+						<td>
+						<input type="button" value="3" onClick ="var str1=document.getElementById('resultado').value; if(str1 == '0'){document.getElementById('resultado').value=3} else{ var str2='3'; var res = str1.concat(str2); document.getElementById('resultado').value=res;}"style="width:55px;">
+					</td>
+					<td>
+						<input type="button" value="2" onClick ="var str1=document.getElementById('resultado').value; if(str1 == '0'){document.getElementById('resultado').value=2} else{ var str2='2'; var res = str1.concat(str2); document.getElementById('resultado').value=res;}"style="width:55px;">
+					</td>
+					<td>
+						<input type="button" value="1" onClick ="var str1=document.getElementById('resultado').value; if(str1 == '0'){document.getElementById('resultado').value=1} else{ var str2='1'; var res = str1.concat(str2); document.getElementById('resultado').value=res;}"style="width:55px;">
+					</td>
+					<td>
+						<input type="button" value="-" OnClick="operaciones('restar'); return false;"style="width:55px;">
+					</td>
+
+					<tr style="text-align:center;">
+						<td>
+						<input type="button" value="0" onClick ="var str1=document.getElementById('resultado').value; if(str1 == '0'){document.getElementById('resultado').value=0} else{ var str2='0'; var res = str1.concat(str2); document.getElementById('resultado').value=res;}"style="width:55px;">
+					</td>
+
+					<td colspan="2">
+						<input type="button" value="=" OnClick="operaciones('igual'); return false;" style="width:110px;">
+					</td>
+					<td>
+						<input type="button" value="+" OnClick="operaciones('sumar'); return false;" style="width:55px;">
+					</td>
+
+					</tr>
+
+				</table>
+		</form>
+	</section>
+	<footer>
+		<h3>Ceti Tonala 2023</h3>
+	</footer>
+
+</body>
+<script type="text/javascript">
+	function operaciones(op)
+	{
+		var ops= {
+			sumar: function sumarNumeros(n1,n2){
+				return (parseInt(n1) + parseInt(n2));
+			},
+			restar: function restarNumeros(n1,n2){
+				return (parseInt(n1) - parseInt(n2));
+			},
+			dividir: function dividirNumeros(n1,n2){
+				return (parseInt(n1) / parseInt(n2));
+			},
+			multiplicar: function multiplicarNumeros(n1,n2){
+				return (parseInt(n1) * parseInt(n2));
+			}
+		};
+		var operacion;
+		switch(op){
+		case'sumar':
+			var operando1 = document.getElementById("resultado").value;
+			document.getElementById("resultado").value = operando1 + "+";
+			operacion = document.getElementById("resultado").value;
+			document.getElementById("memoria").value = "suma";
+			break;
+
+		case'restar':
+			var operando1 = document.getElementById("resultado").value;
+			document.getElementById("resultado").value = operando1 + "-";
+			operacion = document.getElementById("resultado").value;
+			document.getElementById("memoria").value = "resta";
+			break;
+
+		case'multiplicar':
+			var operando1 = document.getElementById("resultado").value;
+			document.getElementById("resultado").value = operando1 + "*";
+			operacion = document.getElementById("resultado").value;
+			document.getElementById("memoria").value = "multi";
+			break;
+
+		case'dividir':
+			var operando1 = document.getElementById("resultado").value;
+			document.getElementById("resultado").value = operando1 + "/";
+			operacion = document.getElementById("resultado").value;
+			document.getElementById("memoria").value = "div";
+			break;
+
+		case 'igual':
+			operacion = document.getElementById("resultado").value;
+			var memoriaop = document.getElementById("memoria").value;
+
+			switch (memoriaop){
+			case 'suma':
+				var operando = operacion.split("+");
+				var resultado = ops.sumar(operando[0],
+				operando[1]);
+				document.getElementById("resultado").value = resultado;
+				break;
+
+			case 'resta':
+				var operando = operacion.split("-");
+				var resultado = ops.restar(operando[0],
+				operando[1]);
+				document.getElementById("resultado").value = resultado;
+				break;
+
+			case 'multi':
+				var operando = operacion.split("*");
+				var resultado = ops.multiplicar(operando[0],
+				operando[1]);
+				document.getElementById("resultado").value = resultado;
+				break;
+
+			case 'div':
+				var operando = operacion.split("/");
+				var resultado = ops.dividir(operando[0],
+				operando[1]);
+				document.getElementById("resultado").value = resultado;
+				break;
+			}
+			break;
+		}
+	}
+</script>
+</html>

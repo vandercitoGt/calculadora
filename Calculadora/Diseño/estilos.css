@@ -1,0 +1,98 @@
+*{
+	margin:0;
+	padding:0;
+	-webkit-box-sizing:order-box;
+	-moz-boxsizing:border-box;
+	box-sizing:border-box;
+
+}
+body{
+	background-color: #81d2d5;
+	font-size:1em;
+}
+aside, header, section#Contenedor, section#Contenido, footer{
+	background-color: #f1ee17;
+	margin:3em auto;
+	padding:.5em;
+	vertical-align:top;
+	width:100%;
+}
+aside, section#Contenido{
+	display: inline-block;
+	background-color: #17be47;
+	min-height: 200px;
+	width:73%;
+}
+aside{
+	text-align: center;
+	width: 20%;
+}
+footer{
+	text-align:center;
+	color: #FFF;
+	font-size: .7em;
+}
+header{
+	font-size: .8em;
+	color: #04f4e9;
+	background: url(../img/verde.jpg);
+}
+h1{
+	font-family: 'Abril Fatface', cursive;
+}
+.subTitulos{
+	font-family: 'Abril Fatface', rob;
+	font-size: 4em;
+	color: #d31e1e;
+	font-size: bold;
+
+}
+#LogoTipo{
+	margin-left: 10em;
+}
+nav{
+	width:90%;
+	margin: 1em auto;
+	max-width: 1000px;
+	background: #558b2f;
+	z-index: 10;
+}
+nav ul{
+	overflow: hidden;
+	list-style: none;
+	padding: 0 10.2em;
+}
+nav ul li{
+	float:left;
+}
+nav ul li a{
+	color: #000000;
+	padding: 1.5em;
+	display: block;
+	text-decoration: none;
+}
+nav ul li a span{
+	margin-right: .5em;
+}
+nav ul li a:hover{
+background: #689f38;
+
+border-radius: 2em;
+}
+.ImgRotando{
+	transform: rotateX(0deg);
+	transition-property: transform;
+	transition-duration: 2s;
+
+}
+.ImgRotando:hover{
+	transform: rotateX(5000000000deg);
+
+}
+.iconoRS{
+	transform: escale(1.5,1.5);
+	transition: transform 2s;
+}
+.iconoRS:hover{
+	transform: scale(2.5,2.5);
+}
